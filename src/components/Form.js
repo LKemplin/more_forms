@@ -34,27 +34,27 @@ const Form = (props) => {
                 <div>
                     <label>First Name:</label>
                     <input type="text" onChange={ (e) => setFirstname(e.target.value)}/>
-                    { firstname.length < 2 ? <p>First name must be at least 2 characters.</p> : null}
+                    { firstname.length < 2 && firstname.length > 0 ? <p>First name must be at least 2 characters.</p> : null}
                 </div>
                 <div>
                     <label>Last Name:</label>
                     <input type="text" onChange={ (e) => setLastname(e.target.value)}/>
-                    { lastname.length < 2 ? <p>Last name must be at least 2 characters.</p> : null}
+                    { lastname.length < 2 && lastname.length > 0 ? <p>Last name must be at least 2 characters.</p> : null}
                 </div>
                 <div>
                     <label>Email:</label>
                     <input type="text" onChange={ (e) => setEmail(e.target.value)}/>
-                    { email.length < 5 ? <p>Email must be at least 5 characters.</p> : null}
+                    { email.length < 5 && email.length > 0 ? <p>Email must be at least 5 characters.</p> : null}
                 </div>
                 <div>
                     <label>Password:</label>
                     <input type="password" onChange={ (e) => setPassword(e.target.value)}/>
-                    { password.length < 8 ? <p>Password must be at least 8 characters.</p> : null}
+                    { password.length < 8 && password.length > 0 ? <p>Password must be at least 8 characters.</p> : null}
                 </div>
                 <div>
                     <label>Confirm Password:</label>
                     <input type="password" onChange={ (e) => setPassconfirm(e.target.value)}/>
-                    { password !== passconfirm ? <p>Passwords must match.</p> : null}
+                    { password !== passconfirm && passconfirm.length > 0 ? <p>Passwords must match.</p> : null}
                 </div>
                 <input type="submit" value="Create User"/>
             </form>
